@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+void swap_ele(int a[], int arr_size)
+{
+    int h=arr_size-1;
+    int l=0;
+    int m=0;
+    while(m<=h)
+    {
+        switch(a[m])
+        {
+            case 0: swap(a[l++],a[m++]);
+            break;
+            
+            case 1: m++;
+            break;
+            
+            case 2: swap(a[m],a[h--]);
+            break;
+        }
+    }
+}
+void print_ele(int a[],int arr_size)
+{
+    for(int i=0;i<arr_size;i++)
+    cout<<a[i]<<" ";
+}
+int main()
+{
+    int arr[]={1,0,0,0,1,2,1,2,1,1,2,1,0};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    swap_ele(arr,n);
+    cout<<"\n";
+    print_ele(arr,n);
+   
+}
